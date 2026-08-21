@@ -1,0 +1,364 @@
+/* ============================================
+   SMS 思谋思 - 移动端独立样式 (< 1024px)
+   编辑 PC 页面自动适配，移动端可独立覆盖修改
+   ============================================ */
+
+@media screen and (max-width: 1023px) {
+  :root {
+    --container-padding: 16px;
+    --font-size-5xl: 32px;
+    --font-size-4xl: 28px;
+    --font-size-3xl: 24px;
+    --font-size-2xl: 20px;
+  }
+
+  /* --- 导航栏移动端 --- */
+  .header__inner {
+    height: 60px;
+  }
+
+  .header__logo img {
+    height: 32px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-navy);
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--spacing-lg);
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform var(--transition-base);
+    overflow-y: auto;
+  }
+
+  .nav--open {
+    transform: translateX(0);
+  }
+
+  .nav__link {
+    color: rgba(255,255,255,0.8);
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  .nav__cta {
+    margin-top: var(--spacing-md);
+    text-align: center;
+    padding: 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  .nav__toggle--open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .nav__toggle--open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav__toggle--open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* --- Hero 移动端 --- */
+  .hero {
+    min-height: auto;
+    padding: 100px 0 60px;
+  }
+
+  .hero__title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .hero__desc {
+    font-size: var(--font-size-base);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__visual {
+    display: none;
+  }
+
+  /* --- 统计条 --- */
+  .stats-bar__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .stats-bar__item__number {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* --- 网格系统 --- */
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- 特色优势 --- */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-item {
+    padding: var(--spacing-lg);
+  }
+
+  /* --- 关于我们 --- */
+  .about-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .about-intro__image {
+    order: -1;
+  }
+
+  .certs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- 产品中心 --- */
+  .product-filter {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--spacing-sm);
+  }
+
+  .filter-btn {
+    flex-shrink: 0;
+  }
+
+  .product-detail-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .product-gallery {
+    position: static;
+  }
+
+  /* --- 解决方案 --- */
+  .solution-card {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-card:nth-child(even) .solution-card__image {
+    order: 0;
+  }
+
+  /* --- 技术时间线 --- */
+  .tech-timeline {
+    padding-left: 28px;
+  }
+
+  .tech-timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item::before {
+    left: -22px;
+    width: 10px;
+    height: 10px;
+  }
+
+  /* --- 新闻列表 --- */
+  .news-item {
+    grid-template-columns: 120px 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* --- 设备监测仪表盘 --- */
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .device-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- 联系我们 --- */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- 页脚 --- */
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+
+  /* --- CTA 区 --- */
+  .cta-section h2 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .cta-section p {
+    font-size: var(--font-size-base);
+  }
+
+  /* --- 页面横幅 --- */
+  .page-banner {
+    padding: 100px 0 40px;
+  }
+
+  .page-banner__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .page-banner__desc {
+    font-size: var(--font-size-base);
+  }
+
+  /* --- Section 间距调整 --- */
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .section-header__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* --- 按钮全宽 --- */
+  .btn--lg {
+    width: 100%;
+  }
+}
+
+/* --- 小屏手机 (< 480px) --- */
+@media screen and (max-width: 479px) {
+  :root {
+    --container-padding: 12px;
+    --font-size-5xl: 26px;
+    --font-size-4xl: 22px;
+    --font-size-3xl: 20px;
+  }
+
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-bar__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-docs {
+    grid-template-columns: 1fr;
+  }
+
+  /* 首页落地页移动端适配 */
+  .grid--3,
+  .grid--2 {
+    grid-template-columns: 1fr;
+  }
+  .process-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+  .monitor-entry {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-lg);
+  }
+  .monitor-entry__media {
+    order: -1;
+  }
+  .chip-row {
+    justify-content: flex-start;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-item {
+    grid-template-columns: 1fr;
+  }
+
+  .news-item__image {
+    aspect-ratio: 16/9;
+  }
+
+  .card__body {
+    padding: var(--spacing-md);
+  }
+
+  .hero__badge {
+    font-size: var(--font-size-xs);
+  }
+
+  /* 专利墙 移动端 */
+  .patent-wall {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+  .patent-card__name {
+    min-height: 0;
+  }
+
+  /* 案例详情 移动端 */
+  .case-detail__body {
+    padding: var(--spacing-md);
+  }
+  .case-detail__specs {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+  .case-detail__title {
+    font-size: var(--font-size-lg);
+  }
+
+  /* 效果画廊 移动端 */
+  .effect-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  /* 更多项目 移动端 */
+  .more-projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 企业理念 移动端 */
+  .philosophy-cards {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  .philosophy-slogan {
+    font-size: 1.3rem;
+  }
+}

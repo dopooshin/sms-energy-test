@@ -1,0 +1,10 @@
+# robots.txt - 洛阳思谋思能源科技有限公司
+# 上线前请将下方 Sitemap 链接中的占位域名替换为正式域名
+
+User-agent: *
+Allow: /
+
+# 禁止抓取占位演示资源（如有需要可扩展）
+# Disallow: /assets/images/placeholder/
+
+Sitemap: https://www.sms-energy.com/sitemap.xml

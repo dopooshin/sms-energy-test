@@ -1,0 +1,94 @@
+:root{
+  --navy:#0a1a2f; --navy2:#11263f; --blue:#1b4f8a; --gold:#c9a96e;
+  --line:#e3e8ef; --bg:#f4f6fa; --text:#1d2733; --muted:#7a8699;
+  --ok:#1f9d57; --warn:#d9920a; --err:#d60a1c;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans SC",-apple-system,"Microsoft YaHei",sans-serif;color:var(--text);background:var(--bg)}
+a{color:inherit;text-decoration:none}
+.muted{color:var(--muted);font-size:13px}
+
+/* 顶栏 */
+.topbar{height:56px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.topbar .brand{font-weight:700;letter-spacing:1px}
+.topbar .user{display:flex;align-items:center;gap:12px}
+.uname{font-size:14px}
+.role-badge{font-size:12px;padding:2px 8px;border-radius:10px;color:#fff}
+.role-super{background:var(--err)}
+.role-editor{background:var(--blue)}
+.role-viewer{background:var(--muted)}
+
+/* 布局 */
+.layout{display:flex;min-height:calc(100vh - 56px)}
+.sidebar{width:200px;background:#fff;border-right:1px solid var(--line);padding:14px 0}
+.sidebar nav{display:flex;flex-direction:column}
+.sidebar a{display:block;padding:11px 20px;color:var(--text);font-size:14px;border-left:3px solid transparent}
+.sidebar a:hover{background:var(--bg)}
+.sidebar a.active{background:#eef3fb;border-left-color:var(--blue);color:var(--blue);font-weight:600}
+.content{flex:1;padding:24px 28px;max-width:1080px}
+
+/* 页面头 */
+.page-head{margin-bottom:18px}
+.page-head h2{margin:0 0 4px;font-size:20px}
+.page-head .muted{margin:0}
+
+/* 卡片 */
+.cards{display:flex;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.stat-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 20px;min-width:160px}
+.stat-card .num{font-size:26px;font-weight:700;color:var(--blue)}
+.stat-card .lbl{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* 面板 */
+.panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:18px}
+.panel h3{margin:0 0 14px;font-size:16px}
+
+/* 表单 */
+.form label{display:block;font-size:13px;margin-bottom:14px;color:#374251}
+.form input[type=text],.form input[type=password],.form input[type=number],.form textarea,.form select{
+  width:100%;margin-top:6px;padding:9px 11px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:var(--text)}
+.form textarea{resize:vertical}
+.form fieldset{border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:16px}
+.form legend{font-size:13px;color:var(--blue);padding:0 6px;font-weight:600}
+.actions{margin-top:6px}
+.chk{display:inline-flex;align-items:center;gap:6px}
+.chk input{width:auto;margin:0}
+
+/* 导航行 */
+.nav-row{display:flex;gap:8px;margin-bottom:8px}
+.nav-row input{flex:1}
+
+/* 行内表单 */
+.inline-form{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+.inline-form label{margin-bottom:0}
+.inline{display:inline}
+
+/* 表格 */
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+.tbl th{color:var(--muted);font-weight:600;font-size:13px}
+.tbl .ops{display:flex;gap:8px;align-items:center}
+.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:8px;background:#eef3fb;color:var(--blue)}
+
+/* 按钮 */
+.btn{display:inline-block;border:1px solid transparent;border-radius:8px;padding:8px 16px;font-size:14px;cursor:pointer;background:#eef1f6;color:var(--text)}
+.btn:hover{filter:brightness(.97)}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-danger{background:var(--err);color:#fff}
+.btn-warn{background:var(--warn);color:#fff}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
+.btn-sm{padding:5px 10px;font-size:12px}
+
+/* 提示 */
+.alert{padding:10px 14px;border-radius:8px;margin-bottom:14px;font-size:14px}
+.alert-ok{background:#e7f7ee;color:var(--ok);border:1px solid #b7e6c9}
+.alert-error{background:#fdeaec;color:var(--err);border:1px solid #f3b9bf}
+
+.perm-list{margin:0;padding-left:20px;line-height:1.9;font-size:14px}
+
+/* 登录 */
+.login-wrap{height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),var(--navy2))}
+.login-card{background:#fff;border-radius:14px;padding:34px 38px;width:360px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.login-card h1{margin:0 0 4px;font-size:20px}
+.login-card form{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+.login-card label{display:flex;flex-direction:column;font-size:13px;color:#374251;gap:6px}
+.login-card input{padding:9px 11px;border:1px solid var(--line);border-radius:8px;font-size:14px}

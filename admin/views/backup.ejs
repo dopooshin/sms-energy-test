@@ -1,0 +1,65 @@
+<%- include('partials/head', { active: 'backup' }) %>
+<div class="page-head">
+  <h2>备份中心</h2>
+  <p class="muted">一键备份可立即打包数据+官网源；自动备份按策略定时执行并保留最近 N 份；恢复前系统会自动再备份一次。</p>
+</div>
+
+<% if (ran) { %><div class="alert alert-ok">一键备份已完成。</div><% } %>
+<% if (restored) { %><div class="alert alert-ok">已从备份恢复（恢复前已自动创建安全备份）。</div><% } %>
+<% var berrs={1:'备份失败',2:'恢复失败',3:'未收到文件',4:'文件恢复失败'}; %>
+<% if (typeof err!=='undefined' && berrs[err]) { %><div class="alert alert-error"><%= berrs[err] %></div><% } %>
+
+<div class="panel">
+  <h3>一键备份</h3>
+  <form method="post" action="/backup/run">
+    <button class="btn btn-primary" type="submit">立即备份当前数据</button>
+  </form>
+</div>
+
+<div class="panel">
+  <h3>自动备份策略</h3>
+  <form method="post" action="/backup/config" class="form inline-form">
+    <label class="chk"><input type="checkbox" name="enabled" <%= config.enabled?'checked':'' %>> 启用自动备份</label>
+    <label>频率
+      <select name="frequency">
+        <option value="daily" <%= config.frequency==='daily'?'selected':'' %>>每日 03:00</option>
+        <option value="weekly" <%= config.frequency==='weekly'?'selected':'' %>>每周一 03:00</option>
+      </select>
+    </label>
+    <label>保留份数<input type="number" name="keep" value="<%= config.keep %>" min="1" max="90" style="width:80px"></label>
+    <button class="btn btn-primary" type="submit">保存策略</button>
+  </form>
+</div>
+
+<div class="panel">
+  <h3>从本地文件恢复</h3>
+  <form method="post" action="/backup/upload" enctype="multipart/form-data" class="form inline-form">
+    <input type="file" name="file" accept=".zip" required>
+    <button class="btn btn-warn" type="submit">上传并恢复</button>
+  </form>
+</div>
+
+<div class="panel">
+  <h3>备份历史</h3>
+  <table class="tbl">
+    <thead><tr><th>时间</th><th>标签</th><th>类型</th><th>大小</th><th>操作</th></tr></thead>
+    <tbody>
+    <% if (backups.length===0) { %><tr><td colspan="5" class="muted">暂无备份</td></tr><% } %>
+    <% backups.forEach(function(b){ %>
+      <tr>
+        <td><%= new Date(b.createdAt).toLocaleString('zh-CN') %></td>
+        <td><%= b.label %></td>
+        <td><span class="tag"><%= b.type %></span></td>
+        <td class="muted"><%= (b.size/1024).toFixed(1) %> KB</td>
+        <td class="ops">
+          <a class="btn btn-sm" href="/backup/download/<%= b.id %>">下载</a>
+          <form method="post" action="/backup/restore/<%= b.id %>" class="inline" onsubmit="return confirm('确认恢复？恢复前会自动再备份一次当前状态。');">
+            <button class="btn btn-warn btn-sm" type="submit">恢复</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+    </tbody>
+  </table>
+</div>
+<%- include('partials/foot') %>

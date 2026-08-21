@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 · 联系我们 - 洛阳思谋思能源科技有限公司</title>
+  <meta name="description" content="洛阳思谋思能源科技有限公司（SMS）专注电磁节能与水处理技术，坚持自主研发，历经三次产品迭代，拥有多项专利与软著。公司地址、电话、邮箱及在线留言通道，期待与您共创绿色节能未来。">
+  <meta name="keywords" content="思谋思,关于我们,联系我们,电磁除垢,自主研发,企业简介,专利,洛阳能源科技">
+  <meta name="author" content="洛阳思谋思能源科技有限公司">
+  <meta property="og:title" content="关于思谋思 - 洛阳思谋思能源科技有限公司">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="专注电磁节能与水处理技术，坚持自主创新，三次迭代铸就核心产品。">
+
+  <!-- Google Fonts: Noto Sans SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- 样式文件引入顺序：common → pc → mobile -->
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="stylesheet" href="../assets/css/pc.css">
+  <link rel="stylesheet" href="../assets/css/mobile.css">
+
+  <!-- 关于页大气版专属样式（about- 前缀，避免与全局冲突） -->
+  <style>
+    :root{
+      --ab-navy:#0e2a4d;
+      --ab-navy-deep:#081a30;
+      --ab-red:#D60A1C;
+      --ab-gold:#c9a96e;
+      --ab-muted:rgba(255,255,255,.72);
+    }
+    /* Hero */
+    .about-hero{
+      position:relative;
+      min-height:88vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      padding-top:90px;
+    }
+    .about-hero__bg{
+      position:absolute;inset:0;
+      background:url('../assets/images/about/about-hero.jpg') center/cover no-repeat;
+      transform:scale(1.06);
+      animation:abZoom 22s ease-in-out infinite alternate;
+    }
+    @keyframes abZoom{from{transform:scale(1.06)}to{transform:scale(1.16)}}
+    .about-hero__overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(135deg, rgba(14,42,77,.94) 0%, rgba(14,42,77,.72) 45%, rgba(8,26,48,.9) 100%);
+    }
+    .about-hero__grid{
+      position:absolute;inset:0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size:64px 64px;
+    }
+    .about-hero__content{
+      position:relative;z-index:2;text-align:center;color:#fff;
+      padding:0 24px;max-width:1000px;
+    }
+    .about-hero__eyebrow{
+      font-size:13px;letter-spacing:8px;color:var(--ab-gold);
+      text-transform:uppercase;margin-bottom:28px;
+      opacity:0;animation:abFade 1s .3s forwards;
+    }
+    .about-hero__title{
+      font-family:'Noto Sans SC',sans-serif;font-weight:900;
+      font-size:clamp(34px,5.5vw,68px);line-height:1.35;letter-spacing:6px;
+      margin-bottom:8px;
+      opacity:0;animation:abFade 1s .5s forwards;
+    }
+    .about-hero__title .ac{color:var(--ab-red);}
+    .about-hero__divider{
+      width:60px;height:3px;background:var(--ab-red);
+      margin:30px auto;
+      opacity:0;animation:abFade 1s .7s forwards;
+    }
+    .about-hero__sub{
+      font-size:clamp(14px,1.7vw,19px);font-weight:300;
+      color:var(--ab-muted);letter-spacing:2px;line-height:2;
+      opacity:0;animation:abFade 1s .9s forwards;
+    }
+    .about-hero__sub strong{color:#fff;font-weight:600;}
+    @keyframes abFade{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    .about-hero__scroll{
+      position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+      z-index:2;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:3px;
+      text-align:center;animation:abBounce 2s infinite;
+    }
+    .about-hero__scroll::after{
+      content:'';display:block;width:1px;height:36px;
+      background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);
+      margin:10px auto 0;
+    }
+    @keyframes abBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+    /* 理念三栏 */
+    .about-values{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+      max-width:1100px;margin:8px auto 0;
+      border:1px solid #e8ecf1;border-radius:10px;overflow:hidden;background:#fff;
+    }
+    .about-value{
+      padding:48px 32px;text-align:center;
+      border-right:1px solid #e8ecf1;
+      transition:all .5s ease;position:relative;
+    }
+    .about-value:last-child{border-right:none;}
+    .about-value:hover{
+      background:var(--ab-navy);transform:translateY(-6px);
+      box-shadow:0 18px 50px rgba(8,26,48,.25);
+    }
+    .about-value__char{
+      font-family:'Noto Sans SC',sans-serif;font-weight:900;
+      font-size:64px;color:var(--ab-navy);line-height:1;margin-bottom:18px;
+      transition:color .5s;
+    }
+    .about-value:hover .about-value__char{color:#fff;}
+    .about-value__line{
+      width:36px;height:3px;background:#ddd;margin:0 auto 18px;
+      transition:background .5s;
+    }
+    .about-value:hover .about-value__line{background:var(--ab-red);}
+    .about-value__title{
+      font-size:20px;font-weight:700;color:var(--ab-navy);
+      margin-bottom:12px;letter-spacing:2px;transition:color .5s;
+    }
+    .about-value:hover .about-value__title{color:#fff;}
+    .about-value__desc{
+      font-size:14px;color:#666;line-height:2;transition:color .5s;
+    }
+    .about-value:hover .about-value__desc{color:rgba(255,255,255,.72);}
+
+    /* 现场展示 */
+    .about-showcase{
+      display:grid;grid-template-columns:1fr 1fr;gap:20px;
+      max-width:1100px;margin:32px auto 0;
+    }
+    .about-showcase__item{
+      position:relative;overflow:hidden;border-radius:8px;aspect-ratio:16/7;
+    }
+    .about-showcase__item img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease;}
+    .about-showcase__item:hover img{transform:scale(1.07);}
+    .about-showcase__item::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(to top,rgba(8,26,48,.78) 0%,transparent 55%);
+    }
+    .about-showcase__cap{position:absolute;bottom:20px;left:22px;z-index:2;color:#fff;}
+    .about-showcase__cap h4{font-size:17px;font-weight:700;margin-bottom:4px;letter-spacing:1px;}
+    .about-showcase__cap p{font-size:12px;color:rgba(255,255,255,.72);}
+
+    /* 响应式 */
+    @media (max-width:768px){
+      .about-hero{min-height:78vh;padding-top:80px;}
+      .about-values{grid-template-columns:1fr;}
+      .about-value{border-right:none;border-bottom:1px solid #e8ecf1;}
+      .about-value:last-child{border-bottom:none;}
+      .about-showcase{grid-template-columns:1fr;}
+    }
+  </style>
+  <link rel="canonical" href="https://www.sms-energy.com/pages/about.html">
+</head>
+<body>
+
+  <!-- ===== 页头 / 导航栏 ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="思谋思首页">
+        <img class="logo__img" src="../assets/logo-sms.png" alt="洛阳思谋思能源科技">
+        <span class="logo-text">思谋思能源科技<small>SMOOTH ENERGY TEC.CO</small></span>
+      </a>
+      <button class="nav__toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html" class="nav__link">首页</a>
+        <a href="about.html" class="nav__link nav__link--active">关于我们</a>
+        <a href="products.html" class="nav__link">产品中心</a>
+        <a href="solutions.html" class="nav__link">解决方案</a>
+        <a href="technology.html" class="nav__link">技术优势</a>
+        <a href="cases.html" class="nav__link">成功案例</a>
+        <a href="news.html" class="nav__link">新闻动态</a>
+        <a href="monitor.html" class="nav__link">设备运行状况</a>
+        <a href="about.html#contact" class="nav__link">联系我们</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== 大气 Hero：诚善德 ===== -->
+    <section class="about-hero">
+      <div class="about-hero__bg"></div>
+      <div class="about-hero__overlay"></div>
+      <div class="about-hero__grid"></div>
+      <div class="about-hero__content">
+        <div class="about-hero__eyebrow">ABOUT SMS · 企业理念</div>
+        <h1 class="about-hero__title"><span class="ac">诚</span>以立人<br><span class="ac">善</span>以造物<br><span class="ac">德</span>以立业</h1>
+        <div class="about-hero__divider"></div>
+        <p class="about-hero__sub">做<strong>值得信赖</strong>的人 &nbsp;·&nbsp; 造<strong>有益社会</strong>的产品 &nbsp;·&nbsp; 成<strong>受人尊敬</strong>的企业</p>
+      </div>
+      <div class="about-hero__scroll">SCROLL</div>
+    </section>
+
+    <!-- ===== 面包屑 ===== -->
+    <div class="container">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="index.html">首页</a>
+        <span>›</span>
+        <span>关于我们</span>
+      </nav>
+    </div>
+
+    <!-- ===== 公司简介区 ===== -->
+    <section class="section section--white" aria-labelledby="intro-title">
+      <div class="container about-intro">
+          <div class="about-intro__image">
+            <img src="../assets/images/about/factory-entrance.jpg" alt="思谋思厂区 - 国家级科技企业孵化器" class="card__image" loading="eager" width="1260" height="649">
+          </div>
+        <div class="about-intro__text">
+          <h2 id="intro-title">坚持自主研发的电磁除垢创新者</h2>
+          <p>洛阳思谋思能源科技有限公司（SMS）成立于 2021 年，坐落于中国(河南)自由贸易试验区洛阳片区，是一家专注于电磁物理除垢与工业循环水节能技术的高新技术企业。</p>
+          <p>公司自创立以来坚持走自主创新路线，核心产品历经三次技术迭代，从单机型电磁除垢仪发展为分布式、可远程管控的模块化机组，在除垢效率、稳定性与智能化水平上持续突破。</p>
+          <p>目前公司已拥有多项实用新型专利、软件著作权及发明专利申请，产品广泛应用于冷却塔、中央空调、工业循环水等场景，帮助数百家客户实现绿色、低耗、长效的设备运行。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 企业理念 ===== -->
+    <section class="section section--white" aria-labelledby="philosophy-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__subtitle">Our Philosophy</p>
+          <h2 class="section-header__title" id="philosophy-title">企业理念</h2>
+        </div>
+        <div class="philosophy-core">
+          <p class="philosophy-slogan">诚以立人，善以造物，德以立业。</p>
+          <p class="philosophy-pair">人无诚不立，业无善不兴，企无德不远。</p>
+        </div>
+        <div class="about-values">
+          <div class="about-value">
+            <div class="about-value__char">诚</div>
+            <div class="about-value__line"></div>
+            <h3 class="about-value__title">以诚立身</h3>
+            <p class="about-value__desc">言出必行，我们做值得信赖的人。</p>
+          </div>
+          <div class="about-value">
+            <div class="about-value__char">善</div>
+            <div class="about-value__line"></div>
+            <h3 class="about-value__title">以善造物</h3>
+            <p class="about-value__desc">笃实求精，我们造有益社会的产品。</p>
+          </div>
+          <div class="about-value">
+            <div class="about-value__char">德</div>
+            <div class="about-value__line"></div>
+            <h3 class="about-value__title">以德立业</h3>
+            <p class="about-value__desc">守正担当，我们成受人尊敬的企业。</p>
+          </div>
+        </div>
+        <p class="philosophy-foot">从每一项技术到每一台设备，从每一次沟通到每一份承诺，思谋思能源科技始终以「诚、善、德」为根本，致力于让工业更高效、让环境更友好，与客户和伙伴共创长远价值。</p>
+      </div>
+    </section>
+
+    <!-- ===== 核心数据 ===== -->
+    <section class="section section--gray" aria-label="企业核心数据">
+      <div class="container">
+        <div class="stats-bar__grid">
+          <div class="stats-bar__item">
+            <div class="stats-bar__item__number">500<span style="font-size:24px;">万</span></div>
+            <div class="stats-bar__item__label">注册资本（元）</div>
+          </div>
+          <div class="stats-bar__item">
+            <div class="stats-bar__item__number">10000<span style="font-size:24px;">㎡</span></div>
+            <div class="stats-bar__item__label">现代化厂房面积</div>
+          </div>
+          <div class="stats-bar__item">
+            <div class="stats-bar__item__number">5<span style="font-size:24px;">人</span></div>
+            <div class="stats-bar__item__label">参保核心技术团队</div>
+          </div>
+          <div class="stats-bar__item">
+            <div class="stats-bar__item__number">200-300<span style="font-size:24px;">万</span></div>
+            <div class="stats-bar__item__label">年营业收入</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 发展历程时间线 ===== -->
+    <section class="section section--white" aria-labelledby="history-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__subtitle">Milestones</p>
+          <h2 class="section-header__title" id="history-title">发展历程</h2>
+          <p class="section-header__desc">从创立到发明专利，每一步都源于对电磁技术的专注。</p>
+        </div>
+        <div class="tech-timeline">
+          <div class="timeline-item">
+            <div class="timeline-item__year">2021</div>
+            <h3 class="timeline-item__title">公司成立</h3>
+            <p class="timeline-item__desc">洛阳思谋思能源科技有限公司正式注册成立，确立电磁物理除垢与节能技术的主攻方向。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__year">2022</div>
+            <h3 class="timeline-item__title">首款产品问世</h3>
+            <p class="timeline-item__desc">推出首款分布式电磁除垢仪，完成核心原理验证与首批工业现场应用。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__year">2023</div>
+            <h3 class="timeline-item__title">技术迭代升级</h3>
+            <p class="timeline-item__desc">完成第二次产品迭代，除垢效率与工况适应性显著提升，并启动远程监控功能研发。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__year">2024</div>
+            <h3 class="timeline-item__title">多项专利布局</h3>
+            <p class="timeline-item__desc">围绕电磁发生装置与控制系统布局多项实用新型专利与软件著作权。</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item__year">2025</div>
+            <h3 class="timeline-item__title">发明专利突破</h3>
+            <p class="timeline-item__desc">核心电磁除垢技术提交发明专利申请，产品实现第三次迭代并规模化交付。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 资质荣誉 ===== -->
+    <section class="section section--gray" aria-labelledby="certs-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__subtitle">Certifications</p>
+          <h2 class="section-header__title" id="certs-title">资质荣誉</h2>
+          <p class="section-header__desc">以规范管理与持续创新构筑技术护城河。</p>
+        </div>
+        <div class="certs-grid">
+          <div class="cert-item">
+            <div class="cert-item__icon" aria-hidden="true">🏅</div>
+            <div class="cert-item__name">质量管理体系认证</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__icon" aria-hidden="true">💻</div>
+            <div class="cert-item__name">多项软件著作权</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__icon" aria-hidden="true">🔧</div>
+            <div class="cert-item__name">实用新型专利</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-item__icon" aria-hidden="true">📜</div>
+            <div class="cert-item__name">发明专利申请中</div>
+          </div>
+        </div>
+
+        <!-- 证书原件 -->
+        <div class="cert-docs">
+          <figure class="cert-doc">
+            <a class="cert-doc__media" href="../assets/files/certs/gaoqi-certificate.pdf" target="_blank" rel="noopener" title="查看高新技术企业证书原件（PDF）">
+              <img src="../assets/images/certs/gaoqi-certificate.jpg" alt="高新技术企业证书" loading="lazy" width="1600" height="1084">
+            </a>
+            <figcaption class="cert-doc__body">
+              <span class="cert-doc__name">高新技术企业证书</span>
+              <a class="cert-doc__hint" href="../assets/files/certs/gaoqi-certificate.pdf" target="_blank" rel="noopener">查看原件 PDF ›</a>
+            </figcaption>
+          </figure>
+          <figure class="cert-doc">
+            <a class="cert-doc__media" href="../assets/files/certs/iso9001-qms-certificate.pdf" target="_blank" rel="noopener" title="查看 ISO 9001 质量管理体系认证证书原件（PDF）">
+              <img src="../assets/images/certs/iso9001-qms-certificate.jpg" alt="ISO 9001 质量管理体系认证证书" loading="lazy" width="1129" height="1600">
+            </a>
+            <figcaption class="cert-doc__body">
+              <span class="cert-doc__name">ISO 9001 质量管理体系认证证书</span>
+              <a class="cert-doc__hint" href="../assets/files/certs/iso9001-qms-certificate.pdf" target="_blank" rel="noopener">查看原件 PDF ›</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- 专利墙 -->
+        <div class="patent-wall-head">
+          <p class="section-header__subtitle">Patents</p>
+          <h3 class="patent-wall-title">发明专利与实用新型专利墙</h3>
+          <p class="patent-wall-desc">12 项自主知识产权，覆盖电磁除垢、杀菌灭藻、节能助燃与水质控制等核心技术。</p>
+        </div>
+        <div class="patent-wall">
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-01-em-descaler-preventer.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-01-em-descaler-preventer.jpg" alt="一种电磁除垢防垢器 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种电磁除垢防垢器</span>
+              <span class="patent-card__year">授权年份 2023</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-01-em-descaler-preventer.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-02-em-vibration-descaler.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-02-em-vibration-descaler.jpg" alt="一种电磁震荡阻垢除垢装置 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种电磁震荡阻垢除垢装置</span>
+              <span class="patent-card__year">授权年份 2022</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-02-em-vibration-descaler.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-03-pulse-descaler.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-03-pulse-descaler.jpg" alt="一种防堵式电磁脉冲除垢装置 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种防堵式电磁脉冲除垢装置</span>
+              <span class="patent-card__year">授权年份 2022</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-03-pulse-descaler.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-04-heat-exchanger-descaler.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-04-heat-exchanger-descaler.jpg" alt="一种换热器用电磁除垢装置 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种换热器用电磁除垢装置</span>
+              <span class="patent-card__year">授权年份 2022</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-04-heat-exchanger-descaler.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-05-cooling-tower-heat.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-05-cooling-tower-heat.jpg" alt="一种冷却塔的换热装置 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种冷却塔的换热装置</span>
+              <span class="patent-card__year">授权年份 2024</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-05-cooling-tower-heat.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-06-cooling-tower-filler.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-06-cooling-tower-filler.jpg" alt="一种冷却塔填料除垢装置 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种冷却塔填料除垢装置</span>
+              <span class="patent-card__year">授权年份 2024</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-06-cooling-tower-filler.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-07-em-combustion-saver.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-07-em-combustion-saver.jpg" alt="一种电磁助燃节能器 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种电磁助燃节能器</span>
+              <span class="patent-card__year">授权年份 2023</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-07-em-combustion-saver.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-08-water-auto-control.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-08-water-auto-control.jpg" alt="一种水质水量自动控制装置 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种水质水量自动控制装置</span>
+              <span class="patent-card__year">授权年份 2023</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-08-water-auto-control.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-09-em-sterilization.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-09-em-sterilization.jpg" alt="一种循环水用电磁杀菌灭藻装置 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种循环水用电磁杀菌灭藻装置</span>
+              <span class="patent-card__year">授权年份 2023</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-09-em-sterilization.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-10-water-system-descaler.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-10-water-system-descaler.jpg" alt="一种用于水系统的电磁除垢装置 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种用于水系统的电磁除垢装置</span>
+              <span class="patent-card__year">授权年份 2023</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-10-water-system-descaler.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-11-electrodesalting-tank.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-11-electrodesalting-tank.jpg" alt="一种电脱盐罐 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种电脱盐罐</span>
+              <span class="patent-card__year">授权年份 2024</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-11-electrodesalting-tank.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+          <figure class="patent-card">
+            <a class="patent-card__media" href="../assets/files/patents/patent-12-evaporative-condenser.pdf" target="_blank" rel="noopener" title="查看专利证书原件（PDF）">
+              <img src="../assets/images/patents/patent-12-evaporative-condenser.jpg" alt="一种蒸发式冷凝器 专利证书" loading="lazy" width="396" height="560">
+            </a>
+            <figcaption class="patent-card__body">
+              <span class="patent-card__name">一种蒸发式冷凝器</span>
+              <span class="patent-card__year">授权年份 2024</span>
+              <a class="patent-card__hint" href="../assets/files/patents/patent-12-evaporative-condenser.pdf" target="_blank" rel="noopener">查看原件 ›</a>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 现场展示 ===== -->
+    <section class="section section--white" aria-labelledby="showcase-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__subtitle">On Site</p>
+          <h2 class="section-header__title" id="showcase-title">技术落地 · 工业现场</h2>
+          <p class="section-header__desc">从实验室到生产线，电磁除垢与节能设备已在众多工业现场稳定运行。</p>
+        </div>
+        <div class="about-showcase">
+          <div class="about-showcase__item">
+            <img src="../assets/images/about/showcase-cooling.jpg" alt="工业循环水系统冷却塔现场" loading="lazy">
+            <div class="about-showcase__cap">
+              <h4>循环水系统冷却塔</h4>
+              <p>物理法阻垢除垢 · 环保无药剂 · 不停机在线安装</p>
+            </div>
+          </div>
+          <div class="about-showcase__item">
+            <img src="../assets/images/about/showcase-turbine.jpg" alt="发电厂汽轮发电机组车间" loading="lazy">
+            <div class="about-showcase__cap">
+              <h4>汽轮发电机组车间</h4>
+              <p>电力行业循环水应用 · 远程可控 · 长效稳定运行</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 联系我们区（合并） ===== -->
+    <section class="section section--white" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__subtitle">Contact Us</p>
+          <h2 class="section-header__title" id="contact-title">联系我们</h2>
+          <p class="section-header__desc">期待与您合作，获取电磁除垢、水处理与节能设备咨询。</p>
+        </div>
+        <div class="contact-grid">
+
+          <!-- 左侧：在线留言表单 -->
+          <div class="contact-form">
+            <h3>在线留言</h3>
+            <form id="contactForm" novalidate>
+              <div class="form-group">
+                <label for="cf-name">姓名 <span style="color:var(--color-primary);">*</span></label>
+                <input type="text" id="cf-name" name="name" placeholder="请输入您的称呼" required>
+              </div>
+              <div class="form-group">
+                <label for="cf-phone">联系电话 <span style="color:var(--color-primary);">*</span></label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="请输入您的联系电话" required>
+              </div>
+              <div class="form-group">
+                <label for="cf-email">邮箱</label>
+                <input type="email" id="cf-email" name="email" placeholder="请输入您的邮箱（选填）">
+              </div>
+              <div class="form-group">
+                <label for="cf-company">公司名称</label>
+                <input type="text" id="cf-company" name="company" placeholder="请输入您的公司名称（选填）">
+              </div>
+              <div class="form-group">
+                <label for="cf-product">咨询产品</label>
+                <select id="cf-product" name="product">
+                  <option value="除垢仪器">除垢仪器</option>
+                  <option value="水处理仪器">水处理仪器</option>
+                  <option value="节能器">节能器</option>
+                  <option value="其他">其他</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cf-message">留言内容</label>
+                <textarea id="cf-message" name="message" placeholder="请简要描述您的需求或问题"></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--lg">提交留言</button>
+            </form>
+          </div>
+
+          <!-- 右侧：联系信息面板 -->
+          <div class="contact-info-panel">
+            <div class="info-card">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              </div>
+              <div>
+                <h4 class="info-card__title">公司地址</h4>
+                <p class="info-card__detail">中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+              </div>
+              <div>
+                <h4 class="info-card__title">联系电话</h4>
+                <p class="info-card__detail">全国热线：<strong>400-612-0379</strong><br>座机：0379-64955598<br>手机：17603793210</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </div>
+              <div>
+                <h4 class="info-card__title">电子邮箱</h4>
+                <p class="info-card__detail"><a href="mailto:smoothtec@126.com">smoothtec@126.com</a></p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </div>
+              <div>
+                <h4 class="info-card__title">工作时间</h4>
+                <p class="info-card__detail">周一至周五 9:00 - 18:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 二维码关注区 -->
+        <div class="qr-section" style="margin-top:48px;text-align:center;">
+          <h3 style="font-size:1.25rem;margin-bottom:24px;color:#333;">扫码关注我们</h3>
+          <div class="qr-grid" style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap;">
+            <div class="qr-item" style="text-align:center;">
+              <img src="../assets/images/contact/qr-weixin-video.jpg" alt="微信视频号二维码" style="width:180px;height:auto;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1);border:1px solid #eee;">
+              <p style="margin-top:8px;font-size:.9rem;color:#666;">微信视频号</p>
+            </div>
+            <div class="qr-item" style="text-align:center;">
+              <img src="../assets/images/contact/qr-weixin-mp.jpg" alt="微信公众号二维码" style="width:180px;height:auto;border-radius:8px;box-shadow:0 2px 12px rgba(0,0,0,.1);border:1px solid #eee;">
+              <p style="margin-top:8px;font-size:.9rem;color:#666;">微信公众号</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 地图占位 -->
+    <section class="section section--white" style="padding-top:0;">
+      <div class="container">
+        <div class="map-container">地图加载中 · 后续接入腾讯 / 高德地图 API</div>
+      </div>
+    </section>
+
+    <!-- ===== CTA 区 ===== -->
+    <section class="cta-section" aria-labelledby="about-cta-title">
+      <div class="container">
+        <h2 id="about-cta-title">携手思谋思，共建绿色工业</h2>
+        <p>了解我们的技术与产品，开启您的电磁除垢节能之旅。</p>
+        <a href="#contact" class="btn btn--white btn--lg">联系我们</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 页脚 ===== -->
+    <!-- ========== 页脚 ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="../assets/logo-sms.png" alt="思谋思能源科技 Logo">
+          <p>洛阳思谋思能源科技有限公司（SMS）专注于电磁除垢、水处理与节能技术研发，致力于为客户提供绿色、高效的工业节能解决方案。</p>
+        </div>
+        <div>
+          <h4 class="footer__title">快速链接</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="products.html">产品中心</a></li>
+            <li><a href="solutions.html">解决方案</a></li>
+            <li><a href="cases.html">成功案例</a></li>
+            <li><a href="news.html">新闻动态</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__title">产品与服务</h4>
+          <ul class="footer__links">
+            <li><a href="products.html">电磁除垢仪器</a></li>
+            <li><a href="products.html">水处理仪器</a></li>
+            <li><a href="products.html">电磁节能器</a></li>
+            <li><a href="monitor.html">设备运行状况</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__title">联系我们</h4>
+          <ul class="footer__contact">
+            <li><span>地址</span><span>中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103</span></li>
+            <li><span>电话</span><span>400-612-0379 / 0379-64955598 / 17603793210</span></li>
+            <li><span>邮箱</span><span>smoothtec@126.com</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2021-2026 洛阳思谋思能源科技有限公司 版权所有</span>
+        <span>ICP备XXXXXXX号（占位）</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== 结构化数据 Schema.org (Organization) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "name": "洛阳思谋思能源科技有限公司",
+    "alternateName": "SMS",
+    "foundingDate": "2021",
+    "url": "https://www.sms-energy.com/",
+    "logo": "https://www.sms-energy.com/assets/logo-sms.png",
+    "description": "专注电磁物理除垢与工业循环水节能技术的科技企业，坚持自主研发，历经三次产品迭代。",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "河南",
+      "addressLocality": "洛阳",
+      "streetAddress": "中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103"
+    },
+    "telephone": ["400-612-0379", "0379-64955598", "17603793210"],
+    "email": "smoothtec@126.com",
+    "areaServed": [
+      { "@type": "City", "name": "洛阳" },
+      { "@type": "AdministrativeArea", "name": "河南省" }
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.6326,
+      "longitude": 112.4521
+    }
+  }
+  </script>
+
+  <script src="../assets/js/main.js" defer></script>
+  <script>
+    // 联系表单提交处理（兼容 main.js 中的 validateForm）
+    (function () {
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (window.validateForm && !window.validateForm(this)) {
+          alert('请填写带 * 的必填项（姓名、联系电话）');
+          return;
+        }
+        alert('感谢您的留言，我们会尽快与您联系！');
+        this.reset();
+      });
+    })();
+  </script>
+</body>
+</html>

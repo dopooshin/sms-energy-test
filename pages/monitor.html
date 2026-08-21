@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设备运行状况 - 洛阳思谋思能源科技有限公司</title>
+  <meta name="description" content="思谋思设备运行状况实时监控平台：通过 DTU 转 TCP 协议远程读取设备温度、电流、运行时间等实时数据，掌握设备运行状态。">
+  <meta name="keywords" content="设备运行状况,实时监控,电磁除垢仪,DTU,TCP,远程数据,思谋思,物联网">
+  <meta name="author" content="洛阳思谋思能源科技有限公司">
+  <link rel="canonical" href="https://www.sms-energy.com/monitor.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/atmos.css">
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="logo" aria-label="思谋思首页">
+    <img class="logo__img" src="../assets/logo-sms.png" alt="洛阳思谋思能源科技">
+    <span class="logo-text">思谋思能源科技<small>SMOOTH ENERGY TEC.CO</small></span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">首页</a></li>
+    <li><a href="about.html">关于我们</a></li>
+    <li><a href="products.html">产品中心</a></li>
+    <li><a href="solutions.html">解决方案</a></li>
+    <li><a href="technology.html">技术优势</a></li>
+    <li><a href="cases.html">成功案例</a></li>
+    <li><a href="news.html">新闻动态</a></li>
+    <li><a href="monitor.html" class="active">设备运行状况</a></li>
+    <li><a href="about.html#contact">联系我们</a></li>
+  </ul>
+  <div class="nav-phone"><span>400</span>-612-0379</div>
+</nav>
+
+<main>
+  <!-- 内页 Hero -->
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <p class="page-hero__eyebrow">DEVICE MONITOR · 设备运行状况</p>
+      <h1 class="page-hero__title">实时监控设备状态 · 远程掌握运行数据</h1>
+      <p class="page-hero__desc">通过 DTU 转 TCP 协议，远程读取设备温度、电流、运行时间等关键参数，让运维尽在掌握。</p>
+    </div>
+  </section>
+
+  <nav class="breadcrumb container" aria-label="面包屑">
+    <a href="index.html">首页</a><span>/</span><span>设备运行状况</span>
+  </nav>
+
+  <!-- 预留说明横幅 -->
+  <section class="section section--soft" style="padding-top:0;">
+    <div class="container">
+      <div class="monitor-note reveal">
+        <p><strong>⚠ 预留说明：</strong>本模块为预留接口，当前展示示意界面。后期将通过 <strong>DTU 转 TCP 协议</strong> 远程读取设备实时信息（温度、电流、运行时间等）。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 设备状态总览 -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__subtitle">Device Dashboard</p>
+        <h2 class="section-header__title">设备状态总览</h2>
+        <p class="section-header__desc">以下为示意界面，展示设备接入后的运行状态效果。后续通过 DTU 对接真实设备后，温度、电流、运行时间等数据将实时刷新。</p>
+      </div>
+
+      <div class="dashboard-grid" id="deviceDashboard"></div>
+    </div>
+  </section>
+
+  <!-- 图表区域占位 -->
+  <section class="section section--soft" style="padding-top:0;">
+    <div class="container">
+      <div class="chart-area reveal">
+        <h3>温度趋势图</h3>
+        <div class="chart-placeholder">图表组件待接入 · 支持 ECharts / Chart.js</div>
+      </div>
+      <div class="chart-area reveal">
+        <h3>电流与运行时间趋势</h3>
+        <div class="chart-placeholder">图表组件待接入 · 支持 ECharts / Chart.js</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DTU 接口说明区 -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__subtitle">Technical Architecture</p>
+        <h2 class="section-header__title">技术架构说明</h2>
+      </div>
+
+      <div class="arch-flow reveal">
+        <span class="arch-node">设备端 (DTU 模块)</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-node">TCP/IP 网络</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-node">数据服务器</span>
+        <span class="arch-arrow">→</span>
+        <span class="arch-node arch-node--accent">Web 前端展示</span>
+      </div>
+
+      <div class="grid-2">
+        <div class="card reveal">
+          <div class="card__body">
+            <h3 class="card__title">支持协议</h3>
+            <p class="card__desc" style="margin-bottom:0;">Modbus TCP / 自定义 TCP 协议。<br>后续可扩展 MQTT、WebSocket 实时推送与 HTTP 轮询等方式接入。</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="card__body">
+            <h3 class="card__title">数据字段</h3>
+            <p class="card__desc" style="margin-bottom:0;">设备 ID、温度、电流、电压、运行状态、运行时间、故障码等。<br>字段随设备型号扩展，统一由数据服务器解析后下发前端。</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="section-header__desc reveal" style="text-align:center;margin-top:36px;font-size:13px;">本页设备卡片与指标为示意界面，由 <code>atmos.js</code> 中的 <code>initMonitorDemo()</code> 渲染示例数据，<code>connectDTU()</code> 接口已预留待后续对接。</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>想了解设备接入方案？</h2>
+      <p>如需将您的设备接入远程监控平台，欢迎联系思谋思技术团队获取专属方案。</p>
+      <a href="about.html#contact" class="btn btn--white btn--lg">联系我们</a>
+    </div>
+  </section>
+</main>
+
+<!-- 页脚 -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/logo-sms.png" alt="思谋思能源科技 Logo">
+        <p>洛阳思谋思能源科技有限公司（SMS）专注于电磁除垢、水处理与节能技术研发，致力于为客户提供绿色、高效的工业节能解决方案。</p>
+      </div>
+      <div>
+        <h4 class="footer-title">快速链接</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于我们</a></li>
+          <li><a href="products.html">产品中心</a></li>
+          <li><a href="solutions.html">解决方案</a></li>
+          <li><a href="cases.html">成功案例</a></li>
+          <li><a href="news.html">新闻动态</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">产品与服务</h4>
+        <ul class="footer-links">
+          <li><a href="products.html">电磁除垢仪器</a></li>
+          <li><a href="products.html">水处理仪器</a></li>
+          <li><a href="products.html">电磁节能器</a></li>
+          <li><a href="monitor.html">设备运行状况</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">联系我们</h4>
+        <ul class="footer-contact">
+          <li><span>地址</span><span>中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103</span></li>
+          <li><span>电话</span><span>400-612-0379</span></li>
+          <li><span>邮箱</span><span>smoothtec@126.com</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2021-2026 洛阳思谋思能源科技有限公司 版权所有</span>
+      <span style="margin-left:14px;">ICP备XXXXXXX号（占位）</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.sms-energy.com/index.html" },
+    { "@type": "ListItem", "position": 2, "name": "设备运行状况", "item": "https://www.sms-energy.com/monitor.html" }
+  ]
+}
+</script>
+
+<script src="../assets/js/atmos.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> · 思谋思后台</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">思谋思能源 · 后台管理</div>
+    <div class="user">
+      <% if (admin) { %>
+        <span class="role-badge role-<%= admin.role %>"><%= roleName(admin.role) %></span>
+        <span class="uname"><%= admin.displayName || admin.username %></span>
+        <form method="post" action="/logout" style="display:inline">
+          <button class="btn btn-ghost" type="submit">退出</button>
+        </form>
+      <% } %>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="/" class="<%= typeof active!=='undefined' && active==='dash' ? 'active':'' %>">仪表盘</a>
+        <% if (can('settings.manage')) { %><a href="/settings" class="<%= active==='settings' ? 'active':'' %>">全局站点设置</a><% } %>
+        <% if (can('users.manage')) { %><a href="/users" class="<%= active==='users' ? 'active':'' %>">用户与角色</a><% } %>
+        <% if (can('backup.manage')) { %><a href="/backup" class="<%= active==='backup' ? 'active':'' %>">备份中心</a><% } %>
+        <a href="/logs" class="<%= active==='logs' ? 'active':'' %>">操作日志</a>
+      </nav>
+    </aside>
+    <main class="content">

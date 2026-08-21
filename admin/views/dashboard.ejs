@@ -1,0 +1,31 @@
+<%- include('partials/head', { active: 'dash' }) %>
+<div class="page-head">
+  <h2>仪表盘</h2>
+  <p class="muted">欢迎，<%= admin.displayName || admin.username %>（<%= roleName(admin.role) %>）</p>
+</div>
+
+<div class="cards">
+  <div class="stat-card">
+    <div class="num"><%= stats.admins %></div>
+    <div class="lbl">管理员账号</div>
+  </div>
+  <div class="stat-card">
+    <div class="num"><%= stats.backups %></div>
+    <div class="lbl">备份总数</div>
+  </div>
+  <div class="stat-card">
+    <div class="num"><%= stats.lastBackup ? (stats.lastBackup.type) : '无' %></div>
+    <div class="lbl">最近一次备份</div>
+  </div>
+</div>
+
+<div class="panel">
+  <h3>权限说明</h3>
+  <ul class="perm-list">
+    <li><b>超级管理员</b>：全权，含用户/角色管理与备份恢复。</li>
+    <li><b>内容编辑</b>：仅可管理内容模块，不能改全局设置、不能动备份与账号。</li>
+    <li><b>只读访客</b>：仅可查看仪表盘与自己的操作日志，不能改动任何内容。</li>
+  </ul>
+  <p class="muted">所有关键操作均记录于「操作日志」，可追溯到人，避免误改造成损失。</p>
+</div>
+<%- include('partials/foot') %>

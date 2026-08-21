@@ -1,0 +1,7 @@
+node_modules/
+admin/data/
+admin/backups/
+deploy/
+.DS_Store
+Thumbs.db
+*.log

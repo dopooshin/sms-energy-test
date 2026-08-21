@@ -1,0 +1,55 @@
+<%- include('partials/head', { active: 'users' }) %>
+<div class="page-head">
+  <h2>用户与角色管理</h2>
+  <p class="muted">仅超级管理员可见。角色划分：超级管理员 / 内容编辑 / 只读访客。系统保证至少保留一名超级管理员。</p>
+</div>
+
+<% var errs={1:'请填写用户名和密码',2:'角色非法',3:'用户名已存在',4:'密码至少6位',5:'不能操作自己',6:'至少保留一名超级管理员'}; %>
+<% if (typeof err!=='undefined' && errs[err]) { %><div class="alert alert-error"><%= errs[err] %></div><% } %>
+
+<div class="panel">
+  <h3>现有账号</h3>
+  <table class="tbl">
+    <thead><tr><th>用户名</th><th>昵称</th><th>角色</th><th>创建时间</th><th>操作</th></tr></thead>
+    <tbody>
+    <% admins.forEach(function(a){ %>
+      <tr>
+        <td><%= a.username %></td>
+        <td><%= a.displayName %></td>
+        <td><span class="role-badge role-<%= a.role %>"><%= roleName(a.role) %></span></td>
+        <td class="muted"><%= new Date(a.createdAt).toLocaleString('zh-CN') %></td>
+        <td class="ops">
+          <% if (a.id !== admin.id) { %>
+            <form method="post" action="/users/role/<%= a.id %>" class="inline">
+              <select name="role" onchange="this.form.submit()">
+                <% Object.keys(roles).forEach(function(r){ %>
+                  <option value="<%= r %>" <%= r===a.role?'selected':'' %>><%= roles[r].name %></option>
+                <% }); %>
+              </select>
+            </form>
+            <form method="post" action="/users/delete/<%= a.id %>" class="inline" onsubmit="return confirm('确认删除该账号？');">
+              <button class="btn btn-danger btn-sm" type="submit">删除</button>
+            </form>
+          <% } else { %>
+            <span class="muted">（当前账号）</span>
+          <% } %>
+        </td>
+      </tr>
+    <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<div class="panel">
+  <h3>新建账号</h3>
+  <form method="post" action="/users/create" class="form inline-form">
+    <input type="text" name="username" placeholder="用户名" required>
+    <input type="password" name="password" placeholder="密码(≥6位)" required>
+    <input type="text" name="displayName" placeholder="昵称">
+    <select name="role">
+      <% Object.keys(roles).forEach(function(r){ %><option value="<%= r %>"><%= roles[r].name %></option><% }); %>
+    </select>
+    <button class="btn btn-primary" type="submit">创建</button>
+  </form>
+</div>
+<%- include('partials/foot') %>

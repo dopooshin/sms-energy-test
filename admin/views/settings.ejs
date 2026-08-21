@@ -1,0 +1,51 @@
+<%- include('partials/head', { active: 'settings' }) %>
+<div class="page-head">
+  <h2>全局站点设置</h2>
+  <p class="muted">导航、页脚、主题色、备案号与 SEO 默认值。「发布」后写入站点可消费配置并记录日志。</p>
+</div>
+
+<% if (saved) { %><div class="alert alert-ok">已保存并发布成功。</div><% } %>
+
+<form method="post" action="/settings" class="form">
+  <fieldset>
+    <legend>站点基础</legend>
+    <label>站点标题<input type="text" name="siteTitle" value="<%= settings.siteTitle %>"></label>
+    <label>站点描述（description）<textarea name="siteDescription" rows="3"><%= settings.siteDescription %></textarea></label>
+    <label>Canonical 基址<input type="text" name="canonicalBase" value="<%= settings.canonicalBase %>" placeholder="https://www.sms-energy.com/"></label>
+    <label>OG 标题<input type="text" name="ogTitle" value="<%= settings.ogTitle %>"></label>
+    <label>OG 描述<textarea name="ogDescription" rows="2"><%= settings.ogDescription %></textarea></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>备案与外观</legend>
+    <label>ICP 备案号<input type="text" name="icp" value="<%= settings.icp %>" placeholder="如 豫ICP备XXXXXXXX号（待填）"></label>
+    <label>主题色<input type="color" name="themeColor" value="<%= settings.themeColor %>" style="width:60px;height:36px;padding:0;border:none;vertical-align:middle"> <span class="muted"><%= settings.themeColor %></span></label>
+    <label>页脚文本<input type="text" name="footerText" value="<%= settings.footerText %>"></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>导航菜单</legend>
+    <div id="navRows">
+      <% settings.nav.forEach(function(n){ %>
+        <div class="nav-row">
+          <input type="text" name="navLabel[]" value="<%= n.label %>" placeholder="显示名">
+          <input type="text" name="navHref[]" value="<%= n.href %>" placeholder="链接">
+        </div>
+      <% }); %>
+    </div>
+    <button type="button" class="btn btn-ghost" onclick="addNav()">+ 增加一行</button>
+  </fieldset>
+
+  <div class="actions">
+    <button class="btn btn-primary" type="submit">保存并发布</button>
+  </div>
+</form>
+
+<script>
+function addNav(){
+  var d=document.createElement('div'); d.className='nav-row';
+  d.innerHTML='<input type="text" name="navLabel[]" placeholder="显示名"><input type="text" name="navHref[]" placeholder="链接">';
+  document.getElementById('navRows').appendChild(d);
+}
+</script>
+<%- include('partials/foot') %>
