@@ -633,13 +633,25 @@
     <!-- 地图占位 -->
     <section class="section section--white" style="padding-top:0;">
   <div class="container">
-    <div class="about-map-fallback" style="padding:40px;text-align:center;border:1px dashed #c9a96e;border-radius:12px;background:#fffaf0;color:#8a6d2f;">
-      <h3 style="margin:0 0 10px;">公司位置</h3>
-      <p style="margin:0;font-size:15px;line-height:1.8;">中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103</p>
-      <p style="margin:10px 0 0;font-size:13px;color:#b08a3a;">（后台「全局设置」填写腾讯地图 Key 后，将自动展示 interactive 地图）</p>
-    </div>
+    <div id="aboutMap" style="width:100%;height:420px;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);"></div>
   </div>
 </section>
+<script charset="utf-8" src="https://map.qq.com/api/gljs?v=1.exp&key=DPBBZ-JJPKT-NTCXV-LHDU2-I5IQZ-JOFYQ"></script>
+<script>
+(function(){
+  var LAT=34.642, LNG=112.447, ZOOM=15, ADDR="中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103";
+  function initMap(){
+    var el=document.getElementById('aboutMap');
+    if(typeof TMap==='undefined'){ el.innerHTML='<div style="padding:40px;text-align:center;color:#888">地图加载失败，请检查腾讯地图 Key 或网络。</div>'; return; }
+    var center=new TMap.LatLng(LAT, LNG);
+    var map=new TMap.Map(el, { center:center, zoom:ZOOM });
+    new TMap.MultiMarker({ map:map, geometries:[{ id:'m1', position:center }] });
+    var info=new TMap.InfoWindow({ map:map, position:center, content:'<div style="padding:6px 10px;font-size:13px;">'+ADDR+'</div>' });
+    info.open();
+  }
+  if(window.TMap) initMap(); else window.addEventListener('load', initMap);
+})();
+</script>
 
     <!-- ===== CTA 区 ===== -->
     <section class="cta-section" aria-labelledby="about-cta-title">
