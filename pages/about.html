@@ -639,14 +639,15 @@
 <script charset="utf-8" src="https://map.qq.com/api/gljs?v=1.exp&key=DPBBZ-JJPKT-NTCXV-LHDU2-I5IQZ-JOFYQ"></script>
 <script>
 (function(){
-  var LAT=34.605, LNG=112.3755, ZOOM=16, ADDR="中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103";
+  var LAT=34.605, LNG=112.3755, ZOOM=16, ADDR="中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103", COMPANY="洛阳思谋思能源科技有限公司";
   function initMap(){
     var el=document.getElementById('aboutMap');
     if(typeof TMap==='undefined'){ el.innerHTML='<div style="padding:40px;text-align:center;color:#888">地图加载失败，请检查腾讯地图 Key 或网络。</div>'; return; }
     var center=new TMap.LatLng(LAT, LNG);
     var map=new TMap.Map(el, { center:center, zoom:ZOOM });
-    new TMap.MultiMarker({ map:map, geometries:[{ id:'m1', position:center }] });
-    var info=new TMap.InfoWindow({ map:map, position:center, content:'<div style="padding:6px 10px;font-size:13px;">'+ADDR+'</div>' });
+    var marker=new TMap.MultiMarker({ map:map, geometries:[{ id:'m1', position:center, properties:{ title: COMPANY || ADDR } }] });
+    var info=new TMap.InfoWindow({ map:map, position:center,
+      content:'<div style="padding:8px 12px;font-size:14px;font-weight:600;color:#0a1a2f;">'+(COMPANY||ADDR)+'</div>'+(ADDR?'<div style="padding:0 12px 8px;font-size:12px;color:#666;">'+ADDR+'</div>':'') });
     info.open();
   }
   if(window.TMap) initMap(); else window.addEventListener('load', initMap);
