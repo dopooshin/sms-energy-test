@@ -7,16 +7,29 @@
   <meta name="description" content="思谋思设备运行状况实时监控平台：通过 DTU 转 TCP 协议远程读取设备温度、电流、运行时间等实时数据，掌握设备运行状态。">
   <meta name="keywords" content="设备运行状况,实时监控,电磁除垢仪,DTU,TCP,远程数据,思谋思,物联网">
   <meta name="author" content="洛阳思谋思能源科技有限公司">
-  <link rel="canonical" href="https://www.sms-energy.com/monitor.html">
-
+  <meta property="og:title" content="设备运行状况 - 洛阳思谋思能源科技有限公司">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="思谋思设备运行状况实时监控平台：通过 DTU 转 TCP 协议远程读取设备温度、电流、运行时间等实时数据，掌握设备运行状态。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="../assets/css/atmos.css">
+  
+  <link rel="canonical" href="https://www.sms-energy.com/monitor.html">
+  
+  <style id="admin-mobile-tweaks">
+.mobile-only { display: none !important; }
+@media (max-width: 900px) {
+  .pc-only { display: none !important; }
+  .mobile-only { display: block !important; }
+}
+</style>
 </head>
 <body>
 
-<!-- 导航栏 -->
+
+<!-- 导航栏（atmos 系统页面由模板注入） -->
 <nav class="navbar" id="navbar">
   <a href="index.html" class="logo" aria-label="思谋思首页">
     <img class="logo__img" src="../assets/logo-sms.png" alt="洛阳思谋思能源科技">
@@ -31,11 +44,15 @@
     <li><a href="technology.html">技术优势</a></li>
     <li><a href="cases.html">成功案例</a></li>
     <li><a href="news.html">新闻动态</a></li>
-    <li><a href="monitor.html" class="active">设备运行状况</a></li>
+    <li><a href="monitor.html">设备运行状况</a></li>
     <li><a href="about.html#contact">联系我们</a></li>
   </ul>
-  <div class="nav-phone"><span>400</span>-612-0379</div>
+  <div class="nav-phone">400-612-0379</div>
 </nav>
+
+
+<!-- 导航栏 -->
+
 
 <main>
   <!-- 内页 Hero -->
@@ -47,9 +64,7 @@
     </div>
   </section>
 
-  <nav class="breadcrumb container" aria-label="面包屑">
-    <a href="index.html">首页</a><span>/</span><span>设备运行状况</span>
-  </nav>
+  
 
   <!-- 预留说明横幅 -->
   <section class="section section--soft" style="padding-top:0;">
@@ -135,6 +150,9 @@
 </main>
 
 <!-- 页脚 -->
+
+
+
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -156,9 +174,9 @@
       <div>
         <h4 class="footer-title">产品与服务</h4>
         <ul class="footer-links">
-          <li><a href="products.html">电磁除垢仪器</a></li>
-          <li><a href="products.html">水处理仪器</a></li>
-          <li><a href="products.html">电磁节能器</a></li>
+          <li><a href="pd-cabinet-small.html">电磁阻垢机柜</a></li>
+          <li><a href="pd-energy-saver.html">电磁节能器</a></li>
+          <li><a href="pd-circulating.html">循环水除垢设备</a></li>
           <li><a href="monitor.html">设备运行状况</a></li>
         </ul>
       </div>
@@ -178,17 +196,19 @@
   </div>
 </footer>
 
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.sms-energy.com/index.html" },
-    { "@type": "ListItem", "position": 2, "name": "设备运行状况", "item": "https://www.sms-energy.com/monitor.html" }
-  ]
+  "@type": "WebPage",
+  "name": "设备运行状况",
+  "url": "https://www.sms-energy.com/monitor.html",
+  "isPartOf": { "@type": "WebSite", "name": "思谋思能源科技", "url": "https://www.sms-energy.com/" }
 }
 </script>
 
+
 <script src="../assets/js/atmos.js" defer></script>
+
 </body>
 </html>
