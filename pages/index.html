@@ -323,6 +323,13 @@
     .hero-title { letter-spacing: 2px; }
   }
 </style>
+<style id="admin-mobile-tweaks">
+.mobile-only { display: none !important; }
+@media (max-width: 900px) {
+  .pc-only { display: none !important; }
+  .mobile-only { display: block !important; }
+}
+</style>
 </head>
 <body>
 
@@ -702,6 +709,7 @@
   }, { threshold: 0.12 });
   reveals.forEach(el => observer.observe(el));
 </script>
+
 
 </body>
 </html>
