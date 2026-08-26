@@ -10,20 +10,18 @@
   <meta property="og:title" content="关于思谋思 - 洛阳思谋思能源科技有限公司">
   <meta property="og:type" content="website">
   <meta property="og:description" content="专注电磁节能与水处理技术，坚持自主创新，三次迭代铸就核心产品。">
-
-  <!-- Google Fonts: Noto Sans SC -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-  <!-- 样式文件引入顺序：common → pc → mobile -->
+  
+  <!-- 关于/案例/新闻：使用原版 common 设计系统 -->
   <link rel="stylesheet" href="../assets/css/common.css">
   <link rel="stylesheet" href="../assets/css/pc.css">
   <link rel="stylesheet" href="../assets/css/mobile.css">
-
-  <!-- 关于页大气版专属样式（about- 前缀，避免与全局冲突） -->
-  <style>
-    :root{
+  
+  <link rel="canonical" href="https://www.sms-energy.com/pages/about.html">
+  <style id="page-head-style">
+:root{
       --ab-navy:#0e2a4d;
       --ab-navy-deep:#081a30;
       --ab-red:#D60A1C;
@@ -161,12 +159,20 @@
       .about-value:last-child{border-bottom:none;}
       .about-showcase{grid-template-columns:1fr;}
     }
-  </style>
-  <link rel="canonical" href="https://www.sms-energy.com/pages/about.html">
+</style>
+  <style id="admin-mobile-tweaks">
+.mobile-only { display: none !important; }
+@media (max-width: 900px) {
+  .pc-only { display: none !important; }
+  .mobile-only { display: block !important; }
+}
+</style>
 </head>
 <body>
 
-  <!-- ===== 页头 / 导航栏 ===== -->
+
+
+<!-- ===== 页头 / 导航栏 ===== -->
   <header class="header">
     <div class="container header__inner">
       <a href="index.html" class="logo" aria-label="思谋思首页">
@@ -176,17 +182,7 @@
       <button class="nav__toggle" aria-label="打开菜单" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="nav" aria-label="主导航">
-        <a href="index.html" class="nav__link">首页</a>
-        <a href="about.html" class="nav__link nav__link--active">关于我们</a>
-        <a href="products.html" class="nav__link">产品中心</a>
-        <a href="solutions.html" class="nav__link">解决方案</a>
-        <a href="technology.html" class="nav__link">技术优势</a>
-        <a href="cases.html" class="nav__link">成功案例</a>
-        <a href="news.html" class="nav__link">新闻动态</a>
-        <a href="monitor.html" class="nav__link">设备运行状况</a>
-        <a href="about.html#contact" class="nav__link">联系我们</a>
-      </nav>
+      
     </div>
   </header>
 
@@ -207,11 +203,7 @@
 
     <!-- ===== 面包屑 ===== -->
     <div class="container">
-      <nav class="breadcrumb" aria-label="面包屑">
-        <a href="index.html">首页</a>
-        <span>›</span>
-        <span>关于我们</span>
-      </nav>
+      
     </div>
 
     <!-- ===== 公司简介区 ===== -->
@@ -640,10 +632,14 @@
 
     <!-- 地图占位 -->
     <section class="section section--white" style="padding-top:0;">
-      <div class="container">
-        <div class="map-container">地图加载中 · 后续接入腾讯 / 高德地图 API</div>
-      </div>
-    </section>
+  <div class="container">
+    <div class="about-map-fallback" style="padding:40px;text-align:center;border:1px dashed #c9a96e;border-radius:12px;background:#fffaf0;color:#8a6d2f;">
+      <h3 style="margin:0 0 10px;">公司位置</h3>
+      <p style="margin:0;font-size:15px;line-height:1.8;">中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103</p>
+      <p style="margin:10px 0 0;font-size:13px;color:#b08a3a;">（后台「全局设置」填写腾讯地图 Key 后，将自动展示 interactive 地图）</p>
+    </div>
+  </div>
+</section>
 
     <!-- ===== CTA 区 ===== -->
     <section class="cta-section" aria-labelledby="about-cta-title">
@@ -657,102 +653,88 @@
 
   <!-- ===== 页脚 ===== -->
     <!-- ========== 页脚 ========== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="../assets/logo-sms.png" alt="思谋思能源科技 Logo">
-          <p>洛阳思谋思能源科技有限公司（SMS）专注于电磁除垢、水处理与节能技术研发，致力于为客户提供绿色、高效的工业节能解决方案。</p>
-        </div>
-        <div>
-          <h4 class="footer__title">快速链接</h4>
-          <ul class="footer__links">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="about.html">关于我们</a></li>
-            <li><a href="products.html">产品中心</a></li>
-            <li><a href="solutions.html">解决方案</a></li>
-            <li><a href="cases.html">成功案例</a></li>
-            <li><a href="news.html">新闻动态</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer__title">产品与服务</h4>
-          <ul class="footer__links">
-            <li><a href="products.html">电磁除垢仪器</a></li>
-            <li><a href="products.html">水处理仪器</a></li>
-            <li><a href="products.html">电磁节能器</a></li>
-            <li><a href="monitor.html">设备运行状况</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="footer__title">联系我们</h4>
-          <ul class="footer__contact">
-            <li><span>地址</span><span>中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103</span></li>
-            <li><span>电话</span><span>400-612-0379 / 0379-64955598 / 17603793210</span></li>
-            <li><span>邮箱</span><span>smoothtec@126.com</span></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <span>© 2021-2026 洛阳思谋思能源科技有限公司 版权所有</span>
-        <span>ICP备XXXXXXX号（占位）</span>
-      </div>
-    </div>
-  </footer>
+  
 
   <!-- ===== 结构化数据 Schema.org (Organization) ===== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
-    "name": "洛阳思谋思能源科技有限公司",
-    "alternateName": "SMS",
-    "foundingDate": "2021",
-    "url": "https://www.sms-energy.com/",
-    "logo": "https://www.sms-energy.com/assets/logo-sms.png",
-    "description": "专注电磁物理除垢与工业循环水节能技术的科技企业，坚持自主研发，历经三次产品迭代。",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "河南",
-      "addressLocality": "洛阳",
-      "streetAddress": "中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103"
-    },
-    "telephone": ["400-612-0379", "0379-64955598", "17603793210"],
-    "email": "smoothtec@126.com",
-    "areaServed": [
-      { "@type": "City", "name": "洛阳" },
-      { "@type": "AdministrativeArea", "name": "河南省" }
-    ],
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 34.6326,
-      "longitude": 112.4521
-    }
-  }
-  </script>
 
-  <script src="../assets/js/main.js" defer></script>
-  <script>
-    // 联系表单提交处理（兼容 main.js 中的 validateForm）
-    (function () {
-      var form = document.getElementById('contactForm');
-      if (!form) return;
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (window.validateForm && !window.validateForm(this)) {
-          alert('请填写带 * 的必填项（姓名、联系电话）');
-          return;
-        }
-        alert('感谢您的留言，我们会尽快与您联系！');
-        this.reset();
-      });
-    })();
-  </script>
+
+
+<!-- 页脚（common 设计系统） -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="../assets/logo-sms.png" alt="思谋思能源科技 Logo">
+        <p>洛阳思谋思能源科技有限公司（SMS）专注于电磁除垢、水处理与节能技术研发，致力于为客户提供绿色、高效的工业节能解决方案。</p>
+      </div>
+      <div>
+        <h4 class="footer__title">快速链接</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">关于我们</a></li>
+          <li><a href="products.html">产品中心</a></li>
+          <li><a href="solutions.html">解决方案</a></li>
+          <li><a href="cases.html">成功案例</a></li>
+          <li><a href="news.html">新闻动态</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__title">产品与服务</h4>
+        <ul class="footer__links">
+          <li><a href="products.html">电磁除垢仪器</a></li>
+          <li><a href="products.html">水处理仪器</a></li>
+          <li><a href="products.html">电磁节能器</a></li>
+          <li><a href="monitor.html">设备运行状况</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__title">联系我们</h4>
+        <ul class="footer__contact">
+          <li><span>地址</span><span>中国(河南)自由贸易试验区洛阳片区高新区延光路18号1-103</span></li>
+          <li><span>电话</span><span>400-612-0379 / 0379-64955598 / 17603793210</span></li>
+          <li><span>邮箱</span><span>smoothtec@126.com</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2021-2026 洛阳思谋思能源科技有限公司 版权所有</span>
+      <span>ICP备XXXXXXX号（占位）</span>
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "关于我们 · 联系我们",
+  "url": "https://www.sms-energy.com/pages/about.html",
+  "isPartOf": { "@type": "WebSite", "name": "思谋思能源科技", "url": "https://www.sms-energy.com/" }
+}
+</script>
+
+
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+(function () {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = form.querySelector('[name="name"]');
+    var phone = form.querySelector('[name="phone"]');
+    if ((name && !name.value.trim()) || (phone && !phone.value.trim())) {
+      alert('请填写带 * 的必填项（姓名、联系电话）');
+      return;
+    }
+    alert('感谢您的留言，我们会尽快与您联系！');
+    form.reset();
+  });
+})();
+</script>
+
+
 </body>
 </html>
